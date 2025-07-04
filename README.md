@@ -26,7 +26,6 @@ PredictX is an intelligent predictive maintenance system designed to reduce unex
 - *Filename:* predictive___maintenance.csv
 - *Total Features:* 10 (including target)
 - *Target Column:* Failure Type
-- *Source:* Provided by team member Muskan from Kaggle (cleaned and preprocessed)
 
 
 ## 👨‍💻 Tech Stack
