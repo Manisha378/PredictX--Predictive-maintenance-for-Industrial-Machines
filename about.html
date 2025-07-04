@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | PredictX</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background-color: #fdfdfd; }
+    nav {
+      display: flex;
+      background-color: #947184;
+      padding: 15px 30px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo { color: white; font-weight: bold; }
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: #EBEAF3; }
+
+    .hero {
+      background-color: #111827;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .hero-left { max-width: 45%; }
+    .hero-left .main-title { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+    .hero-left .subtitle { font-size: 14px; margin-bottom: 20px; color: #ddd; }
+    .hero-left img.image-small { width: 140px; display: block; }
+    .hero img.image-large { width: 250px; object-fit: contain; align-self: flex-start; }
+
+    .section { background: #f8d5c0; padding: 40px 30px; }
+    .mission-vision { display: flex; justify-content: space-between; margin-bottom: 40px; }
+    .mission-vision div { width: 48%; }
+    .mission-vision h2 { font-size: 20px; margin-bottom: 10px; color: #000; }
+    .mission-vision p { font-size: 15px; color: #222; }
+
+    .how-it-works h2 { font-size: 20px; margin-bottom: 30px; color: #000; }
+    .how-it-works > p { font-size: 14px; margin-bottom: 20px; color: #333; }
+    .steps { display: flex; justify-content: space-between; gap: 20px; }
+    .step { text-align: center; width: 30%; }
+    .step img { width: 60px; margin-bottom: 10px; }
+    .step h3 { font-size: 16px; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: #333; }
+
+    footer {
+      background-color: #947184;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">PredictX</div>
+    <div>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="upload.html">Upload</a>
+      <a href="result.html">Result</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-left">
+      <h1 class="main-title">About Our Predictive Maintenance Platform</h1>
+      <p class="subtitle">Harnessing AI and IoT to predict machine failures before they happen</p>
+      <img src="C:\Users\Lenovo\Downloads\preictive 1.jpg" alt="Predictive Maintenance Image" class="image-small" />
+    </div>
+    <img src="C:\Users\Lenovo\Downloads\predictive4.jpg" alt="Technician Illustration" class="image-large" />
+  </div>
+
+  <div class="section">
+    <div class="mission-vision">
+      <div>
+        <h2>Our Mission</h2>
+        <p>To minimize downtime and optimize machine health through intelligent analytics.</p>
+      </div>
+      <div>
+        <h2>Our Vision</h2>
+        <p>Creating a future where machines self-report issues before they impact productivity.</p>
+      </div>
+    </div>
+
+    <div class="how-it-works">
+      <h2>How It Works</h2>
+      <p>AI models detect anomalies and predict failures</p>
+      <div class="steps">
+        <div class="step">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkM8y2Ay4F8FWfyQyyKyiepd3KdJfoS6Z3fQ&s" alt="Data Collection" />
+          <h3>Step 1: Data Collection</h3>
+          <p>Sensors capture real-time machine performance data.</p>
+        </div>
+        <div class="step">
+          <img src="data:image/png;base64,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" alt="AI Analysis" />
+          <h3>Step 2: AI Analysis</h3>
+          <p>Data is analyzed by AI to detect potential issues.</p>
+        </div>
+        <div class="step">
+          <img src="data:image/jpeg;base64,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" alt="Maintenance Alert" />
+          <h3>Step 3: Maintenance Alerts</h3>
+          <p>Technicians receive smart alerts before issues occur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 PredictX | AI-based Predictive Maintenance for Industrial Machines</p>
+  </footer>
+
+</body>
+</html>
