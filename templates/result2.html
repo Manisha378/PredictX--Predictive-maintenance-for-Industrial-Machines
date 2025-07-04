@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prediction Results | PredictX</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #947184;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 26px;
+      font-weight: 700;
+      color: darkred;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ddd;
+    }
+
+    /* Main Section */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      background: #f6f6f6;
+    }
+
+    .result-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .result-box h2 {
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    .result-box p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #947184;
+      color: white;
+    }
+
+    .result-box button {
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.result-box button:hover {
+  background-color: #6a1fbf;
+}
+
+    /* Footer */
+    footer {
+      background-color: #947184;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="data:image/png;base64,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" alt="PredictX logo"/>
+      <span>PredictX</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Upload</a>
+      <a href="#">Result</a>
+      <a href="#">About</a>
+      <a href="#">Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <main>
+    <div class="result-box">
+      <h2>Prediction Results</h2>
+      <p>Below are the results based on the uploaded sensor data:</p>
+      <table>
+        <tr>
+          <th>Sensor ID</th>
+          <th>Prediction</th>
+          <th>Confidence</th>
+        </tr>
+        <tr>
+          <td>S1</td>
+          <td>No Failure</td>
+          <td>95%</td>
+        </tr>
+        <tr>
+          <td>S2</td>
+          <td>Failure</td>
+          <td>87%</td>
+        </tr>
+      </table>
+      <button>Upload Another File</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 PredictX | AI-based Predictive Maintenance for Industrial Machines
+  </footer>
+</body>
+</html>
