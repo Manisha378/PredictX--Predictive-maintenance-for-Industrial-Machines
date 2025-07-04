@@ -21,14 +21,14 @@
       <h1>PredictX</h1>
     </div>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Upload</a></li>
-        <li><a href="#">Result</a></li>
-        <li><a href="#">Dashboard</a></li>
-      </ul>
-    </nav>
+  <ul>
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('upload') }}">Upload</a></li>
+    <li><a href="{{ url_for('result') }}">Result</a></li>
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+  </ul>
+</nav>
   </header>
 
   <!-- Main Content -->
